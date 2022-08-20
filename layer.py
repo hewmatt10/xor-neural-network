@@ -3,8 +3,8 @@ class Layer:
         self.input = None 
         self.output = None 
     
-    def forward(self, x):
+    def forward_propagation(self, input):
         pass 
 
-    def backward(self, delta_y, lr):
+    def backward_propagation(self, output_gradient, learning_rate):
         pass
