@@ -11,7 +11,7 @@ class DenseLayer(Layer):
         return np.matmul(self.weights, self.input) + self.bias 
     
     def backward_propagation(self, output_gradient, learning_rate):
-        input_gradient = np.matmul(output_gradient, np.transpose(self.weights))
+        input_gradient = np.matmul(np.transpose(self.weights), output_gradient)
         self.weights -= learning_rate * np.matmul(output_gradient, np.transpose(self.input))
         self.bias -= learning_rate * output_gradient
         return input_gradient
